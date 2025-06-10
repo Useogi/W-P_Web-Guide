@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Guide</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/01.png">
+    <!-- Font Awesome 아이콘 불러오기 (최신 버전) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <div>
+        <img src="./img/01.jpg" alt="Web Guide">
+        <img src="./img/02.jpg" alt="Web Guide">
+        <img src="./img/03.jpg" alt="Web Guide">
+        <img src="./img/04.jpg" alt="Web Guide">
+        <img src="./img/05.jpg" alt="Web Guide">
+        <img src="./img/06.jpg" alt="Web Guide">
+        <img src="./img/07.jpg" alt="Web Guide">
+    </div>
+
+    <!-- 사이드 버튼 -->
+    <div class="side-buttons">
+        <!-- <button id="btnTop">Top</button> -->
+        <button id="btnTop"><i class="fas fa-home"></i></button>
+        <button id="btnBack">
+            <a href="https://useogi.github.io/with-pet/">Back</a>
+        </button>
+        <button id="btnUp"><i class="fas fa-chevron-up"></i></button>
+        <button id="btnDown"><i class="fas fa-chevron-down"></i></button>
+    </div>
+
+    <script>
+        const imgs = document.querySelectorAll('img');
+        let currentIndex = 0;
+
+        function scrollToImage(index) {
+            if (index >= 0 && index < imgs.length) {
+                imgs[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
+                currentIndex = index;
+            }
+        }
+
+        document.getElementById('btnTop').onclick = () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            currentIndex = 0;
+        };
+
+        document.getElementById('btnBack').onclick = () => {
+            history.back();
+        };
+
+        document.getElementById('btnUp').onclick = () => {
+            scrollToImage(currentIndex - 1);
+        };
+
+        document.getElementById('btnDown').onclick = () => {
+            scrollToImage(currentIndex + 1);
+        };
+    </script>
+</body>
+
+</html>

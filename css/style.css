@@ -1,0 +1,56 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+div{
+    width: 1320px;
+    margin: 0 auto;
+}
+img{
+    display: block;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+body{
+    background-color: rgba(243, 216, 184, 0.5);
+}
+
+/* side_buttons */
+.side-buttons {
+    position: fixed;
+    right: -1080px;       
+    bottom: 100px;    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.side-buttons button {
+    /* padding: 10px 15px; */
+    background-color: #a98e62; 
+    color: #ffffff;       
+    border: none;
+    width: 55px;             
+    height: 40px;             
+    border-radius: 30px;         
+    font-size: 16px;
+    /* font-weight: bold; */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease;
+    font-family: 'Super Lobster';
+}
+
+.side-buttons button:hover {
+    background-color: #cfbc94;
+    color: #fff;
+    transform: translateY(-2px) scale(1.05);
+    /* 위로 톡 올라감 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* 그림자 강조 */
+}
